@@ -1,0 +1,43 @@
+# activate virtual environment in VS Code
+. myvenv\Scripts\activate.ps1  # activate virtual environment
+
+# neue version der Django APP:
+python manage.py migrate 
+python manage.py makemigrations
+python manage.py runserver
+
+# git push (geht besser)
+git push
+git status  #shows if there is something to push)
+
+
+# a must have to hide the application ceurity key inside the .env file
+#  which will not be uploaded to github (make sure it is included in .gitignore)
+pip install python-decouple 
+
+
+# connect a github repository to a project:
+git init
+git config --global user.email hwb_by@yahoo.de
+git remote add origin https://github.com/hans-werner-bartels/myfirstblog.git
+
+
+# create an admin account for Django App:
+python manage.py createsuperuser
+
+# installation needeed to create auditable App
+pip install django-simple-history 
+
+# start mew Django Project
+django-admin.exe startproject mysite .
+
+# add an App to the Django Web Application
+python3 -m venv myvenv # ceate a virtual environment be in folder for Projeect
+myvenv\Scripts\activate   
+
+python -m pip install --upgrade pip 
+pip install Django     
+
+
+python manage.py startapp blog
+
